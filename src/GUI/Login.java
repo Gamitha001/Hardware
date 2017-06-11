@@ -17,7 +17,8 @@ int i =400;
     public Login() {
         initComponents();
         this.setLocationRelativeTo(this);
-     //   jXTextField1.setFocusable(false);
+        
+ 
        
     }
 
@@ -31,16 +32,12 @@ int i =400;
     private void initComponents() {
 
         jComboBox1 = new javax.swing.JComboBox();
-        jXButton1 = new org.jdesktop.swingx.JXButton();
         jPanel1 = new javax.swing.JPanel();
         CLOSE_BTN = new javax.swing.JLabel();
         MINIMIZE_BTN = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jXButton2 = new org.jdesktop.swingx.JXButton();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jXButton1.setText("jXButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -85,23 +82,15 @@ int i =400;
 
         jPanel2.setBackground(new java.awt.Color(0, 77, 64));
 
-        jXButton2.setText("jXButton2");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(248, 248, 248)
-                .addComponent(jXButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(259, Short.MAX_VALUE))
+            .addGap(0, 539, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(181, Short.MAX_VALUE)
-                .addComponent(jXButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148))
+            .addGap(0, 345, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -171,7 +160,5 @@ int i =400;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private org.jdesktop.swingx.JXButton jXButton1;
-    private org.jdesktop.swingx.JXButton jXButton2;
     // End of variables declaration//GEN-END:variables
 }
