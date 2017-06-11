@@ -10,7 +10,7 @@ package GUI;
  * @author Gamit
  */
 public class Login extends javax.swing.JFrame {
-
+int i =400;
     /**
      * Creates new form Login
      */
