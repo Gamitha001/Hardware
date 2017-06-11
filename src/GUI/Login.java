@@ -17,7 +17,8 @@ int i =400;
     public Login() {
         initComponents();
         this.setLocationRelativeTo(this);
-        jXTextField1.setFocusable(false);
+     //   jXTextField1.setFocusable(false);
+       
     }
 
     /**
@@ -30,17 +31,16 @@ int i =400;
     private void initComponents() {
 
         jComboBox1 = new javax.swing.JComboBox();
+        jXButton1 = new org.jdesktop.swingx.JXButton();
         jPanel1 = new javax.swing.JPanel();
         CLOSE_BTN = new javax.swing.JLabel();
         MINIMIZE_BTN = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jXButton1 = new org.jdesktop.swingx.JXButton();
-        jXTextField1 = new org.jdesktop.swingx.JXTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel1 = new javax.swing.JLabel();
-        jXTextField3 = new org.jdesktop.swingx.JXTextField();
+        jXButton2 = new org.jdesktop.swingx.JXButton();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jXButton1.setText("jXButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -85,54 +85,23 @@ int i =400;
 
         jPanel2.setBackground(new java.awt.Color(0, 77, 64));
 
-        jXButton1.setText("jXButton1");
-
-        jXTextField1.setBorder(null);
-        jXTextField1.setOpaque(false);
-        jXTextField1.setPrompt("USER NAME");
-        jXTextField1.setPromptForeground(new java.awt.Color(96, 125, 139));
-        jXTextField1.setRequestFocusEnabled(false);
-
-        jCheckBox1.setText("jCheckBox1");
-
-        jLabel1.setText("jLabel1");
-
-        jXTextField3.setBorder(null);
-        jXTextField3.setOpaque(false);
-        jXTextField3.setPrompt("PASSWORD");
-        jXTextField3.setPromptForeground(new java.awt.Color(96, 125, 139));
-        jXTextField3.setRequestFocusEnabled(false);
+        jXButton2.setText("jXButton2");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(168, 168, 168)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jXButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(jCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
-                    .addComponent(jXTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addGap(248, 248, 248)
+                .addComponent(jXButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(259, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jXTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jXTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jXButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox1))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE)
+                .addComponent(jXButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(148, 148, 148))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -199,13 +168,10 @@ int i =400;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CLOSE_BTN;
     private javax.swing.JLabel MINIMIZE_BTN;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private org.jdesktop.swingx.JXButton jXButton1;
-    private org.jdesktop.swingx.JXTextField jXTextField1;
-    private org.jdesktop.swingx.JXTextField jXTextField3;
+    private org.jdesktop.swingx.JXButton jXButton2;
     // End of variables declaration//GEN-END:variables
 }
