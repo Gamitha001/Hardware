@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author Gamit
@@ -17,6 +19,7 @@ public class MainScreen extends javax.swing.JFrame {
     public MainScreen() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+        System.out.println(DISPLAY.getSize());
     }
 
     /**
@@ -28,20 +31,149 @@ public class MainScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        SIDEBAR_LEFT = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        DISPLAY = new javax.swing.JScrollPane();
+        jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        EDIT = new javax.swing.JMenu();
+        UNDO = new javax.swing.JMenuItem();
+        REDO = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        CUT = new javax.swing.JMenuItem();
+        COPY = new javax.swing.JMenuItem();
+        PASTE = new javax.swing.JMenuItem();
+        HIS_PASTE = new javax.swing.JMenuItem();
+        DELETE = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        SIDEBAR_LEFT.setBackground(new java.awt.Color(102, 102, 0));
+        SIDEBAR_LEFT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SIDEBAR_LEFTMouseClicked(evt);
+            }
+        });
+        SIDEBAR_LEFT.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel3.setBackground(new java.awt.Color(54, 60, 74));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image/Sider_Image/Dashboard_50px.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 138, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        SIDEBAR_LEFT.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
+
+        getContentPane().add(SIDEBAR_LEFT);
+        SIDEBAR_LEFT.setBounds(0, 0, 50, 650);
+
+        jPanel1.setBackground(new java.awt.Color(255, 102, 0));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1370, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 650, 1370, 40);
+
+        DISPLAY.setViewportBorder(javax.swing.BorderFactory.createEtchedBorder());
+        DISPLAY.setAutoscrolls(true);
+
+        jPanel2.setPreferredSize(new java.awt.Dimension(1312, 650));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1312, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+        );
+
+        DISPLAY.setViewportView(jPanel2);
+
+        getContentPane().add(DISPLAY);
+        DISPLAY.setBounds(50, 0, 1320, 650);
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        EDIT.setText("Edit");
+
+        UNDO.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
+        UNDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image/Undo_15px.png"))); // NOI18N
+        UNDO.setText("Undo");
+        UNDO.setEnabled(false);
+        EDIT.add(UNDO);
+
+        REDO.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_MASK));
+        REDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image/Redo_15px.png"))); // NOI18N
+        REDO.setText("Redo");
+        REDO.setEnabled(false);
+        EDIT.add(REDO);
+
+        jSeparator1.setEnabled(false);
+        EDIT.add(jSeparator1);
+
+        CUT.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
+        CUT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image/Cut_15px.png"))); // NOI18N
+        CUT.setText("Cut");
+        CUT.setEnabled(false);
+        EDIT.add(CUT);
+
+        COPY.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        COPY.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image/Copy_15px.png"))); // NOI18N
+        COPY.setText("Copy");
+        COPY.setEnabled(false);
+        EDIT.add(COPY);
+
+        PASTE.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        PASTE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image/Paste_15px.png"))); // NOI18N
+        PASTE.setText("Paste");
+        PASTE.setEnabled(false);
+        EDIT.add(PASTE);
+
+        HIS_PASTE.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        HIS_PASTE.setText("Paste History");
+        HIS_PASTE.setEnabled(false);
+        EDIT.add(HIS_PASTE);
+
+        DELETE.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_DELETE, 0));
+        DELETE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image/Delete_15px.png"))); // NOI18N
+        DELETE.setText("Delete");
+        DELETE.setEnabled(false);
+        EDIT.add(DELETE);
+
+        jMenuBar1.add(EDIT);
 
         jMenu3.setText("View");
         jMenuBar1.add(jMenu3);
@@ -54,19 +186,20 @@ public class MainScreen extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 848, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 492, Short.MAX_VALUE)
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void SIDEBAR_LEFTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SIDEBAR_LEFTMouseClicked
+        SideBar Anim = new SideBar(SIDEBAR_LEFT, DISPLAY);
+        Anim.Show(190, 3);
+        for (int i = 0; i < jPanel2.getComponentCount(); i++) {
+            System.out.println(i);
+            if(jPanel2.getComponent(i)instanceof JTextField){
+
+                System.out.println("ok");
+            }
+        }
+    }//GEN-LAST:event_SIDEBAR_LEFTMouseClicked
 
     /**
      * @param args the command line arguments
@@ -104,11 +237,26 @@ public class MainScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem COPY;
+    private javax.swing.JMenuItem CUT;
+    private javax.swing.JMenuItem DELETE;
+    private javax.swing.JScrollPane DISPLAY;
+    private javax.swing.JMenu EDIT;
+    private javax.swing.JMenuItem HIS_PASTE;
+    private javax.swing.JMenuItem PASTE;
+    private javax.swing.JMenuItem REDO;
+    private javax.swing.JPanel SIDEBAR_LEFT;
+    private javax.swing.JMenuItem UNDO;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
 }
