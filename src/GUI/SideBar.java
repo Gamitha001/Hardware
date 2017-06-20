@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -14,6 +16,7 @@ import javax.swing.JScrollPane;
  */
 public class SideBar {
 
+    private static boolean AUTO_CLOSE;
     private JPanel PANEL;
     private JScrollPane SCROLLPANE;
 
@@ -22,31 +25,62 @@ public class SideBar {
         this.PANEL = PANEL;
     }
 
-    private void setDisplaySize(JScrollPane SCROLL, int width){
-        int Width = SCROLL.getWidth();
-        SCROLL.setBounds(SCROLL.getX(), SCROLL.getY(), width, SCROLL.getHeight());
-    }
-    
     public void Show(int OPEN, long DELAY) {
-        new Thread(new Runnable() {
+        Thread T = new Thread(new Runnable() {
 
             @Override
             public void run() {
-                int width = OPEN - PANEL.getWidth();
-                int SC_widt = SCROLLPANE.getWidth()+PANEL.getWidth();
-                int SC_X = SCROLLPANE.getX()-PANEL.getWidth();
-                
-                for (int i = width; i < OPEN; i++) {
-                    try {
-                        PANEL.setSize(i, PANEL.getHeight());
-                        SCROLLPANE.setBounds(SC_X+i, SCROLLPANE.getY(), SC_widt-i, SCROLLPANE.getHeight());
-                        Thread.sleep(DELAY);
-                    } catch (InterruptedException ex) {
-                        
+
+                try {
+
+                    int pane_widt = 50;
+                    int width = OPEN - pane_widt;
+                    int SC_widt = 1320 + pane_widt;
+                    int SC_X = 50 - pane_widt;
+                    if (AUTO_CLOSE) {
+
+                        for (int i = width; i < OPEN + 1; i++) {
+
+                            PANEL.setSize(i, PANEL.getHeight());
+                            SCROLLPANE.setBounds(SC_X + i, SCROLLPANE.getY(), 1370 - i, SCROLLPANE.getHeight());
+                            Thread.sleep(DELAY);
+
+                        }
+
+                        Thread.sleep(300);
+
+                        for (int i = PANEL.getWidth(); i > pane_widt; i--) {
+                            PANEL.setSize(i, PANEL.getHeight());
+                            SCROLLPANE.setBounds(SC_X - i * -1, SCROLLPANE.getY(), 1265 + i, SCROLLPANE.getHeight());
+                            Thread.sleep(DELAY);
+                        }
+                    } else {
+
+                        if (PANEL.getWidth() == 50) {
+
+                            for (int i = width; i < OPEN + 1; i++) {
+                                PANEL.setSize(i, PANEL.getHeight());
+                                SCROLLPANE.setBounds(SC_X + i, SCROLLPANE.getY(), 1370 - i, SCROLLPANE.getHeight());
+                                Thread.sleep(DELAY);
+                                
+                            }
+                        } else {
+
+                            for (int i = PANEL.getWidth(); i > pane_widt - 1; i--) {
+                                PANEL.setSize(i, PANEL.getHeight());
+                                SCROLLPANE.setBounds(SC_X - i * -1, SCROLLPANE.getY(), 1265 + i, SCROLLPANE.getHeight());
+                                Thread.sleep(DELAY);
+                                
+                            }
+                        }
                     }
-                }
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(SideBar.class.getName()).log(Level.SEVERE, null, ex);
+                }      
             }
-        }).start();
+        }
+        );
+        T.start();
+        
     }
-    
 }
