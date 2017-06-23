@@ -5,27 +5,26 @@
  */
 package GUI;
 
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
-import java.util.LinkedHashSet;
+import GUI.Invoice.Invoice;
 
 /**
  *
  * @author Gamit
  */
 public class MainScreen extends javax.swing.JFrame {
-    
-    private LinkedHashSet<String> CLIPBORD;
-    private Clipboard Clip;
+
+    Invoice INVOICE;
+
     /**
      * Creates new form MainScreen
      */
     public MainScreen() {
-        initComponents();      
+        initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
-        CLIPBORD = new LinkedHashSet<>();
-        Clip = Toolkit.getDefaultToolkit().getSystemClipboard();      
+        LoadFrames();
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,11 +56,9 @@ public class MainScreen extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        STASTU = new javax.swing.JPanel();
         DISPLAY = new javax.swing.JScrollPane();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
+        STASTU = new javax.swing.JPanel();
         MENU_BAR = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         EDIT = new javax.swing.JMenu();
@@ -109,6 +106,11 @@ public class MainScreen extends javax.swing.JFrame {
         SIDEBAR_LEFT.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 190, -1));
 
         jPanel4.setBackground(new java.awt.Color(55, 71, 79));
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image/Sider_Image/Invoice_50px.png"))); // NOI18N
@@ -188,6 +190,15 @@ public class MainScreen extends javax.swing.JFrame {
 
         getContentPane().add(SIDEBAR_LEFT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, -1));
 
+        DISPLAY.setViewportBorder(javax.swing.BorderFactory.createEtchedBorder());
+        DISPLAY.setAutoscrolls(true);
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(1320, 660));
+        jPanel1.setLayout(new java.awt.CardLayout());
+        DISPLAY.setViewportView(jPanel1);
+
+        getContentPane().add(DISPLAY, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 1320, 660));
+
         STASTU.setBackground(new java.awt.Color(97, 97, 97));
 
         javax.swing.GroupLayout STASTULayout = new javax.swing.GroupLayout(STASTU);
@@ -202,36 +213,6 @@ public class MainScreen extends javax.swing.JFrame {
         );
 
         getContentPane().add(STASTU, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 660, -1, -1));
-
-        DISPLAY.setViewportBorder(javax.swing.BorderFactory.createEtchedBorder());
-        DISPLAY.setAutoscrolls(true);
-
-        jPanel2.setPreferredSize(new java.awt.Dimension(1500, 700));
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1118, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(486, Short.MAX_VALUE))
-        );
-
-        DISPLAY.setViewportView(jPanel2);
-
-        getContentPane().add(DISPLAY, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 1320, 660));
 
         jMenu1.setText("File");
         MENU_BAR.add(jMenu1);
@@ -302,14 +283,18 @@ public class MainScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SIDEBAR_LEFTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SIDEBAR_LEFTMouseClicked
-            SideBar Slider_Animation = new SideBar(SIDEBAR_LEFT, DISPLAY); 
-            Slider_Animation.Show(190, 3);                
+        SideBar Slider_Animation = new SideBar(SIDEBAR_LEFT, DISPLAY);
+        Slider_Animation.Show(190, 3);
+
     }//GEN-LAST:event_SIDEBAR_LEFTMouseClicked
 
     private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
         this.setExtendedState(MAXIMIZED_BOTH);
     }//GEN-LAST:event_formWindowStateChanged
 
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+
+    }//GEN-LAST:event_jPanel4MouseClicked
     /**
      * @param args the command line arguments
      */
@@ -377,7 +362,7 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -385,9 +370,10 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 
+    private void LoadFrames() {
+        
+    }
 }

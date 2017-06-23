@@ -61,26 +61,29 @@ public class SideBar {
                             for (int i = width; i < OPEN + 1; i++) {
                                 PANEL.setSize(i, PANEL.getHeight());
                                 SCROLLPANE.setBounds(SC_X + i, SCROLLPANE.getY(), 1370 - i, SCROLLPANE.getHeight());
+                                SCROLLPANE.setHorizontalScrollBar(SCROLLPANE.getHorizontalScrollBar());
+                                SCROLLPANE.setVerticalScrollBar(SCROLLPANE.getVerticalScrollBar());
                                 Thread.sleep(DELAY);
-                                
                             }
                         } else {
 
                             for (int i = PANEL.getWidth(); i > pane_widt - 1; i--) {
                                 PANEL.setSize(i, PANEL.getHeight());
                                 SCROLLPANE.setBounds(SC_X - i * -1, SCROLLPANE.getY(), 1265 + i, SCROLLPANE.getHeight());
-                                Thread.sleep(DELAY);
-                                
+                                SCROLLPANE.setHorizontalScrollBar(SCROLLPANE.getHorizontalScrollBar());
+                                SCROLLPANE.setVerticalScrollBar(SCROLLPANE.getVerticalScrollBar());
+                                Thread.sleep(DELAY);                                
                             }
                         }
                     }
+
                 } catch (InterruptedException ex) {
                     Logger.getLogger(SideBar.class.getName()).log(Level.SEVERE, null, ex);
-                }      
+                }
             }
         }
         );
         T.start();
-        
+
     }
 }
