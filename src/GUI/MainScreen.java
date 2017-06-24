@@ -6,6 +6,7 @@
 package GUI;
 
 import GUI.Invoice.Invoice;
+import GUI.Login.user_Login;
 
 /**
  *
@@ -374,6 +375,7 @@ public class MainScreen extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void LoadFrames() {
-        
+        user_Login log = new user_Login();
+        jPanel1.add(log);
     }
 }

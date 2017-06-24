@@ -47,9 +47,8 @@ public class user_Login extends javax.swing.JPanel {
     public user_Login() {
         initComponents();
         loadtime_date();
-        password.setEchoChar((char) 0);
-        password.setText("PASSWORD");
         password.setTransferHandler(null);
+        jSeparator1.setVisible(false);
     }
 
     /**
@@ -61,40 +60,27 @@ public class user_Login extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jXLabel1 = new org.jdesktop.swingx.JXLabel();
-        jXLabel2 = new org.jdesktop.swingx.JXLabel();
-        loginb = new org.jdesktop.swingx.JXButton();
-        jXButton2 = new org.jdesktop.swingx.JXButton();
+        jLabel1 = new javax.swing.JLabel();
         username = new org.jdesktop.swingx.JXTextField();
         password = new javax.swing.JPasswordField();
+        PASS_TEX = new javax.swing.JLabel();
+        loginb = new org.jdesktop.swingx.JXButton();
+        jXLabel1 = new org.jdesktop.swingx.JXLabel();
+        jXLabel2 = new org.jdesktop.swingx.JXLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
-        jXLabel1.setText("Username");
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jXLabel2.setText("Password");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Login/Images/user_256px.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, 270, 280));
 
-        loginb.setText("LOGIN");
-        loginb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginbActionPerformed(evt);
-            }
-        });
-
-        jXButton2.setText("Forgot your password?");
-        jXButton2.setBorderPainted(false);
-        jXButton2.setContentAreaFilled(false);
-        jXButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jXButton2ActionPerformed(evt);
-            }
-        });
-
-        username.setText("USERNAME");
+        username.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        username.setOpaque(false);
+        username.setPrompt("USER NAME");
         username.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 usernameFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                usernameFocusLost(evt);
             }
         });
         username.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +88,9 @@ public class user_Login extends javax.swing.JPanel {
                 usernameActionPerformed(evt);
             }
         });
+        add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 260, 20));
 
+        password.setOpaque(false);
         password.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 passwordFocusGained(evt);
@@ -111,55 +99,162 @@ public class user_Login extends javax.swing.JPanel {
                 passwordFocusLost(evt);
             }
         });
+        add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 430, 260, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jXLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(300, 300, 300)
-                        .addComponent(loginb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addComponent(jXButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(jXLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(208, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(320, 320, 320)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jXLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jXLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addComponent(loginb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jXButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        PASS_TEX.setForeground(new java.awt.Color(91, 91, 95));
+        PASS_TEX.setText("PASSWORD");
+        PASS_TEX.setOpaque(true);
+        add(PASS_TEX, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 430, 80, 20));
+
+        loginb.setText("Login");
+        loginb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginbActionPerformed(evt);
+            }
+        });
+        add(loginb, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 260, -1));
+
+        jXLabel1.setText("Username :");
+        add(jXLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 390, 60, -1));
+
+        jXLabel2.setText("Password :");
+        add(jXLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, 60, -1));
+
+        jLabel2.setText("Forgot your password?");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel2MouseExited(evt);
+            }
+        });
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 504, 130, -1));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 518, 110, 10));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jXButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jXButton2ActionPerformed
-   if (!username.getText().equals("USERNAME") && username.getText().length() != 0) {
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
+        password.setText("");
+        password.grabFocus();
+    }//GEN-LAST:event_usernameActionPerformed
+
+    private void passwordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusGained
+        password.setText("");
+        PASS_TEX.setVisible(false);
+    }//GEN-LAST:event_passwordFocusGained
+
+    private void passwordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusLost
+        if (new String(password.getPassword()).equals("")) {
+            PASS_TEX.setVisible(true);
+        }
+    }//GEN-LAST:event_passwordFocusLost
+
+    private void loginbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbActionPerformed
+        try {
+            String p = new String(password.getPassword());
+
+            boolean b = false;
+
+            if (username.getText().equals(devusername) && new String(password.getPassword()).equals(devpassword)) {
+                postype = "dvlpr";
+                user = "dvlpr";
+
+                //home h = new home(postype, user);
+                //h.setVisible(true);
+                //this.dispose();
+            } else {
+                ResultSet rs1 = databaseconnection.search("SELECT * FROM user WHERE user_username='" + username.getText() + "'");
+                if (rs1.first()) {
+                    if (rs1.getInt("status") == 1) {
+                        if (!p.startsWith("[C")) {
+                            b = logincheck();
+
+                        } else {
+                            b = logincheckwithr();
+
+                            emp = rs1.getString("emp_id");
+                            System.out.println(emp);
+                            edituser edu = new edituser(null, true, emp, username.getText().toString());
+                            edu.empid = emp;
+                            edu.setVisible(true);
+
+                        }
+
+                        if (b) {
+                            ResultSet rs = databaseconnection.search("SELECT * FROM user WHERE user_username='" + username.getText() + "'");
+
+                            if (rs.first()) {
+
+                               // postype = rs.getString("position");
+                                // user = rs.getString("efname") + " " + rs.getString("elname");
+                                // home h = new home(postype, user);
+                                System.out.println(postype + " " + user);
+                                //h.setVisible(true);
+
+                            } else {
+                                //postype = "admin";
+                                //user = "admin";
+
+                               // home h = new home(postype, user);
+                                //   h.setVisible(true);
+                            }
+
+                        } else {
+                            name = username.getText();
+                            System.out.println(name);
+                            count++;
+                            System.out.println(count);
+
+                            if (name.equals(username.getText())) {
+
+                                switch (count) {
+
+                                    case 1:
+                                        JOptionPane.showMessageDialog(this, "4 Attempts are Remaining\nCheck your username and password ...", "Login Attempts Faild", JOptionPane.WARNING_MESSAGE);
+                                        break;
+                                    case 2:
+                                        JOptionPane.showMessageDialog(this, "3 Attempts are Remaining\nCheck your username and password ...", "Login Attempts Faild", JOptionPane.WARNING_MESSAGE);
+                                        break;
+                                    case 3:
+                                        JOptionPane.showMessageDialog(this, "2 Attempts are Remaining\nCheck your username and password ...", "Login Attempts Faild", JOptionPane.WARNING_MESSAGE);
+                                        break;
+                                    case 4:
+                                        JOptionPane.showMessageDialog(this, "1 Attempts are Remaining\nCheck your username and password ...", "Login Attempts Faild", JOptionPane.WARNING_MESSAGE);
+                                        break;
+                                    default:
+                                        JOptionPane.showMessageDialog(this, "Your account is locked..\n Please use forget password function to get your recovery code", "Login Attempts Faild", JOptionPane.WARNING_MESSAGE);
+                                        databaseconnection.iud("UPDATE user set status='0' WHERE username='" + username.getText() + "' ");
+                                        break;
+                                }
+                            } else {
+                                name = "";
+                                count = 0;
+
+                            }
+                        }
+
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Your Account has been deleted or locked..\n Please contact the admin");
+                    }
+
+                }
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_loginbActionPerformed
+
+    private void usernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFocusGained
+        username.setText("");
+    }//GEN-LAST:event_usernameFocusGained
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        if (!username.getText().equals("USERNAME") && username.getText().length() != 0) {
             try {
 
                 String email = JOptionPane.showInputDialog(this, "Enter your email address");
@@ -230,142 +325,23 @@ public class user_Login extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(this, "Enter your username first", "WARNING", JOptionPane.WARNING_MESSAGE);
             username.grabFocus();
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_jXButton2ActionPerformed
+        }
+    }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
-        password.setText("");
-        password.setEchoChar('*');
-        password.grabFocus();        // TODO add your handling code here:
-    }//GEN-LAST:event_usernameActionPerformed
+    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+        jSeparator1.setVisible(true);
+    }//GEN-LAST:event_jLabel2MouseEntered
 
-    private void usernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFocusGained
-  username.setText("");         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameFocusGained
-
-    private void passwordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusGained
-        password.setEchoChar('*');
-        password.setText("");        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordFocusGained
-
-    private void usernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFocusLost
-        if (username.getText().equals("")) {
-            username.setText("USERNAME");
-        }         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameFocusLost
-
-    private void passwordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusLost
-        String p = new String(password.getPassword());
-
-        if (p.equals("")) {
-            password.setEchoChar((char) 0);
-            password.setText("PASSWORD");
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordFocusLost
-
-    private void loginbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbActionPerformed
-  try {
-            String p = new String(password.getPassword());
-
-            boolean b = false;
-
-            if (username.getText().equals(devusername) && new String(password.getPassword()).equals(devpassword)) {
-                postype = "dvlpr";
-                user = "dvlpr";
-
-                //home h = new home(postype, user);
-                //h.setVisible(true);
-                //this.dispose();
-
-            } else {
-                ResultSet rs1 = databaseconnection.search("SELECT * FROM user WHERE username='" + username.getText() + "'");
-                if (rs1.first()) {
-                    if (rs1.getInt("status") == 1) {
-                        if (!p.startsWith("[C")) {
-                            b = logincheck();
-
-                        } else {
-                            b = logincheckwithr();
-
-                            emp = rs1.getString("emp_id");
-                            System.out.println(emp);
-                            edituser edu = new edituser(null, true, emp, username.getText().toString());
-                            edu.empid = emp;
-                            edu.setVisible(true);
-
-                        }
-
-                        if (b) {
-                            ResultSet rs = databaseconnection.search("SELECT * FROM user WHERE user_username='" + username.getText() + "'");
-
-                            if (rs.first()) {
-
-                               // postype = rs.getString("position");
-                               // user = rs.getString("efname") + " " + rs.getString("elname");
-                               // home h = new home(postype, user);
-                                System.out.println(postype + " " + user);
-                                //h.setVisible(true);
-                            
-                            } else {
-                                //postype = "admin";
-                                //user = "admin";
-
-                               // home h = new home(postype, user);
-                             //   h.setVisible(true);
-                             
-
-                            }
-
-                        } else {
-                            name = username.getText();
-                            System.out.println(name);
-                            count++;
-                            System.out.println(count);
-
-                            if (name.equals(username.getText())) {
-
-                                switch (count) {
-
-                                    case 1:
-                                        JOptionPane.showMessageDialog(this, "4 Attempts are Remaining\nCheck your username and password ...", "Login Attempts Faild", JOptionPane.WARNING_MESSAGE);
-                                        break;
-                                    case 2:
-                                        JOptionPane.showMessageDialog(this, "3 Attempts are Remaining\nCheck your username and password ...", "Login Attempts Faild", JOptionPane.WARNING_MESSAGE);
-                                        break;
-                                    case 3:
-                                        JOptionPane.showMessageDialog(this, "2 Attempts are Remaining\nCheck your username and password ...", "Login Attempts Faild", JOptionPane.WARNING_MESSAGE);
-                                        break;
-                                    case 4:
-                                        JOptionPane.showMessageDialog(this, "1 Attempts are Remaining\nCheck your username and password ...", "Login Attempts Faild", JOptionPane.WARNING_MESSAGE);
-                                        break;
-                                    default:
-                                        JOptionPane.showMessageDialog(this, "Your account is locked..\n Please use forget password function to get your recovery code", "Login Attempts Faild", JOptionPane.WARNING_MESSAGE);
-                                        databaseconnection.iud("UPDATE user set status='0' WHERE username='" + username.getText() + "' ");
-                                        break;
-
-                                }
-                            } else {
-                                name = "";
-                                count = 0;
-
-                            }
-                        }
-
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Your Account has been deleted or locked..\n Please contact the admin");
-                    }
-
-                }
-            }
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_loginbActionPerformed
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        jSeparator1.setVisible(false);
+    }//GEN-LAST:event_jLabel2MouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private org.jdesktop.swingx.JXButton jXButton2;
+    private javax.swing.JLabel PASS_TEX;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JSeparator jSeparator1;
     private org.jdesktop.swingx.JXLabel jXLabel1;
     private org.jdesktop.swingx.JXLabel jXLabel2;
     private org.jdesktop.swingx.JXButton loginb;
